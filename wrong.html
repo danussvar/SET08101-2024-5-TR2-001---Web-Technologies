@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Wrong Answer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="message-container">
+    <h1>Wrong Answer!</h1>
+    <p>You were eaten by a bear... You lost a life.</p>
+    <button onclick="goToYouDied()">Continue</button>
+  </div>
+
+  <script>
+    function goToYouDied() {
+      // Optionally decrease life count in localStorage/sessionStorage
+      window.location.href = 'you_died.html';
+    }
+  </script>
+</body>
+</html>
