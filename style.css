@@ -8,6 +8,17 @@ body{
 
 }
 	
+#heart-1{
+	color:red;
+}
+
+#heart-2{
+	color:red;
+}
+
+#heart-3{
+	color:red;
+}
 
 #text{
 	text-align: center;
@@ -16,5 +27,3 @@ body{
 #buttons{
 	text-align: center;
 }
-
-
