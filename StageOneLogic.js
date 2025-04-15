@@ -55,7 +55,7 @@ function changeColour(event){
 
 
 function correctAns (event){
-	alert("Congratulations! You completed the game!");
+	window.location.href = "functional.html";
 }
 
 wrongBtn.addEventListener("click", changeColour);
