@@ -5,25 +5,29 @@ body{
 	background-position: center;
 	background-attachment: fixed;
 	background-size: cover;
-
+	
+	
 }
 	
-#heart-1{
-	color:red;
-}
-
-#heart-2{
-	color:red;
-}
-
-#heart-3{
-	color:red;
-}
-
-#text{
-	text-align: center;
-}
-
-#buttons{
-	text-align: center;
-}
+	#life-counter{
+		color: red;
+		position: absolute;
+		top: 20px;
+		left: 20px;
+	}
+	
+	#text{
+		text-align: center;
+	}
+	
+	#buttons{
+		text-align: center;
+	}
+	
+	#audio-icons{
+		position: absolute;
+		top: 20px;
+		right: 20px;
+		
+	
+	}
