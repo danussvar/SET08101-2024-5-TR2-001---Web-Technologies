@@ -3,7 +3,9 @@ const heartTwo = document.getElementById("heart-2");
 const heartThree = document.getElementById("heart-3");
 const correctBtn = document.getElementById("correct-btn");
 const wrongBtn = document.getElementById("wrong-btn");
-
+const soundOn = document.getElementById("sound-on");
+const soundOff = document.getElementById("sound-off");
+const music = document.getElementById("bg-music");
 
 let lives = 3;
 if(localStorage.getItem("lives") !=null){
@@ -55,10 +57,34 @@ function changeColour(event){
 
 
 function correctAns (event){
-	alert("Congratulations! You completed the game!");
+	window.location.href = "functional.html";
 }
+
+music.muted = true;
+
+function toggleMusic(){
+	if(music.muted === true){
+		music.muted = false;
+		music.play();
+		soundOn.style.display = "inline";
+		soundOff.style.display = "none";
+		
+	}
+	else{
+		music.muted = true;
+		soundOn.style.display = "none";
+		soundOff.style.display = "inline";
+		
+		
+	}
+}
+
+
 
 wrongBtn.addEventListener("click", changeColour);
 
 
 correctBtn.addEventListener("click", correctAns);
+
+soundOn.addEventListener("click", toggleMusic);
+soundOff.addEventListener("click", toggleMusic);
