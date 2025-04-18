@@ -57,7 +57,7 @@ function changeColour(event){
 
 
 function correctAns (event){
-	window.location.href = "functional.html";
+	alert("You have won the game!, good job")
 }
 
 music.muted = true;
