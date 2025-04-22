@@ -1,53 +1,115 @@
-// List your 8 riddles here. Each object has:
-//  - question: string
-//  - choices: [string, string]
-//  - correct: index 0 or 1
+// scenario.js
+
 const scenarios = [
-  { question: "Riddle 1: You see two paths in a dark forest—left or right?", choices: ["Left", "Right"], correct: 0 },
-  { question: "Riddle 2: A river blocks your way. Build a bridge or swim?", choices: ["Build", "Swim"], correct: 1 },
-  { question: "Riddle 3: A troll asks you his age. Lie or tell the truth?", choices: ["Lie", "Truth"], correct: 1 },
-  { question: "Riddle 4: You find a locked chest. Use the key or force it open?", choices: ["Use Key", "Force Open"], correct: 0 },
-  { question: "Riddle 5: A dragon sleeps on gold. Sneak by or try to steal?", choices: ["Sneak", "Steal"], correct: 0 },
-  { question: "Riddle 6: You meet a wizard offering wisdom or power. Which do you choose?", choices: ["Wisdom", "Power"], correct: 0 },
-  { question: "Riddle 7: The map shows two X’s. Which X is the treasure?", choices: ["First X", "Second X"], correct: 1 },
-  { question: "Riddle 8: A final door asks a password. Shout it or whisper it?", choices: ["Shout", "Whisper"], correct: 1 }
+  {
+    question: "Riddle 1: You see two paths in a dark forest—left or right?",
+    choices: ["Left", "Right"],
+    correct: 0,
+    deathReasons: [
+      "",  // left is correct, so no deathReason needed here
+      "You turned right and were ambushed by a pack of hungry wolves."
+    ]
+  },
+  {
+    question: "Riddle 2: A river blocks your way. Build a bridge or swim?",
+    choices: ["Build", "Swim"],
+    correct: 1,
+    deathReasons: [
+      "The makeshift bridge collapsed under your weight, and you were swept away by the freezing current.",
+      ""  // swim is correct
+    ]
+  },
+  {
+    question: "Riddle 3: A troll asks you his age. Lie or tell the truth?",
+    choices: ["Lie", "Truth"],
+    correct: 1,
+    deathReasons: [
+      "The troll saw through your lie and crushed you with his mighty club.",
+      ""  // truth is correct
+    ]
+  },
+  {
+    question: "Riddle 4: You find a locked chest. Use the key or force it open?",
+    choices: ["Use Key", "Force Open"],
+    correct: 0,
+    deathReasons: [
+      "",  // use key is correct
+      "The chest’s trap mechanism unleashed spikes that impaled you."
+    ]
+  },
+  {
+    question: "Riddle 5: A dragon sleeps on gold. Sneak by or try to steal?",
+    choices: ["Sneak", "Steal"],
+    correct: 0,
+    deathReasons: [
+      "",  // sneak is correct
+      "The dragon awoke and spewed flame, incinerating you instantly."
+    ]
+  },
+  {
+    question: "Riddle 6: You meet a wizard offering wisdom or power. Which do you choose?",
+    choices: ["Wisdom", "Power"],
+    correct: 0,
+    deathReasons: [
+      "",  // wisdom is correct
+      "The dark power corrupted your mind and consumed you from within."
+    ]
+  },
+  {
+    question: "Riddle 7: The map shows two X’s. Which X is the treasure?",
+    choices: ["First X", "Second X"],
+    correct: 1,
+    deathReasons: [
+      "You dug at the wrong X, unleashing a swarm of venomous snakes that bit you fatally.",
+      ""  // second X is correct
+    ]
+  },
+  {
+    question: "Riddle 8: A final door asks a password. Shout it or whisper it?",
+    choices: ["Shout", "Whisper"],
+    correct: 1,
+    deathReasons: [
+      "The door’s wards reacted to your shout and unleashed a bolt of lightning, striking you dead.",
+      ""  // whisper is correct
+    ]
+  }
 ];
 
 window.onload = () => {
-  // Initialise lives and scenario number
   let lives = parseInt(sessionStorage.getItem('lives') || '3', 10);
   let params = new URLSearchParams(location.search);
   let idx = parseInt(params.get('s') || '1', 10);
 
-  // Redirect if out of lives
+  // If out of lives, go straight to the You Died page
   if (lives <= 0) {
     return location.replace(`died.html?prev=${idx}`);
   }
-  // If finished all 8, go to treasure
+  // If past the last scenario, you’ve won
   if (idx > scenarios.length) {
     return location.href = 'treasure.html';
   }
 
-  // Update lives display
+  // Display remaining lives
   document.getElementById('lives').textContent = `Lives: ${lives}`;
 
-  // Populate the riddle and the two buttons
-  let { question, choices, correct } = scenarios[idx - 1];
+  // Load current scenario
+  const { question, choices, correct, deathReasons } = scenarios[idx - 1];
   document.getElementById('riddle').textContent = question;
   document.getElementById('choice1').textContent = choices[0];
   document.getElementById('choice2').textContent = choices[1];
 
-  // Attach events
+  // Wire up buttons
   document.getElementById('choice1').onclick = () => handleAnswer(0);
   document.getElementById('choice2').onclick = () => handleAnswer(1);
 
   function handleAnswer(chosen) {
     if (chosen === correct) {
-      // correct → next scenario
+      // advance on correct
       location.href = `scenario.html?s=${idx + 1}`;
     } else {
-      // wrong → wrong answer page
-      location.href = `wrong.html?prev=${idx}`;
+      // pick up the matching deathReason, URL‑encode it, and pass it on
+      const reason = encodeURIComponent(deathReasons[chosen]);
+      location.href = `wrong.html?prev=${idx}&reason=${reason}`;
     }
   }
 };
