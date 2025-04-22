@@ -84,7 +84,7 @@ window.onload = () => {
   document.body.style.backgroundImage    = `url('images/scenario${idx}.png')`;
   document.body.style.backgroundSize     = 'auto 100%';
   document.body.style.backgroundPosition = 'center';
-  // document.body.style.backgroundAttachment = 'fixed';
+  document.body.style.backgroundRepeat = 'no-repeat';
 
   // If out of lives, go straight to the You Died page
   if (lives <= 0) {
