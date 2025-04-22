@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Forest Quest</title>
+  <!-- Immediately redirect to Scenario 1 -->
+  <meta http-equiv="refresh" content="0; url=scenario.html?s=1">
+  <style>
+    /* Fallback “start” page styling, in case redirect is slow */
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background: #eef5f9;
+      font-family: sans-serif;
+    }
+    .start {
+      text-align: center;
+      padding: 2rem;
+      background: #fff;
+      border: 2px solid #444;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    }
+    .start h1 {
+      margin-bottom: 1rem;
+    }
+    .start button {
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="start">
+    <h1>Welcome to Forest Quest!</h1>
+    <p>If you're not redirected automatically, click below to begin:</p>
+    <button onclick="location.href='scenario.html?s=1'">Start Game</button>
+  </div>
+</body>
+</html>
