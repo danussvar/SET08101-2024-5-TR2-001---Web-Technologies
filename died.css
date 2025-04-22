@@ -8,9 +8,6 @@ body {
   font-family: sans-serif; 
   text-align: center;
   background-color: black;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: center;
 }
 
 #container {
