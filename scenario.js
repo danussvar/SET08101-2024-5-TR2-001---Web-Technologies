@@ -24,17 +24,17 @@ const scenarios = [
     choices: ["Lie", "Truth"],
     correct: 1,
     deathReasons: [
-      "The troll saw through your lie and crushed you with his mighty club.",
+      "The troll saw through your lie and crushed you.",
       ""  // truth is correct
     ]
   },
   {
-    question: "Riddle 4: You find a locked chest. Use the key or force it open?",
-    choices: ["Use Key", "Force Open"],
+    question: "Riddle 4: A swamp blocks your way. Use the vines to swing or swim?",
+    choices: ["Swing", "Swim"],
     correct: 0,
     deathReasons: [
-      "",  // use key is correct
-      "The chest’s trap mechanism unleashed spikes that impaled you."
+      "",  // swim is correct
+      "The swamp swallowed you."
     ]
   },
   {
@@ -79,6 +79,11 @@ window.onload = () => {
   let lives = parseInt(sessionStorage.getItem('lives') || '3', 10);
   let params = new URLSearchParams(location.search);
   let idx = parseInt(params.get('s') || '1', 10);
+
+  // Background image for this scenario:
+  document.body.style.backgroundImage    = `url('images/scenario${idx}.png')`;
+  document.body.style.backgroundSize     = 'cover';
+  document.body.style.backgroundPosition = 'center';
 
   // If out of lives, go straight to the You Died page
   if (lives <= 0) {

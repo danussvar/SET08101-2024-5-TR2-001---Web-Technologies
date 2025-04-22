@@ -2,6 +2,11 @@ window.onload = () => {
     const params = new URLSearchParams(location.search);
     const prev   = parseInt(params.get('prev') || '1', 10);
     const reason = params.get('reason') || "You met an untimely end.";
+
+    // Death background for this wrong answer:
+    document.body.style.backgroundImage    = `url('images/death${prev}.png')`;
+    document.body.style.backgroundSize     = 'cover';
+    document.body.style.backgroundPosition = 'center';
   
     // Show the custom reason
     document.getElementById('reason').textContent = reason;
