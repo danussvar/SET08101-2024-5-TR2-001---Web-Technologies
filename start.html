@@ -5,33 +5,31 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Adventure Game – Start</title>
   <style>
-    /* 1) Make body fill the viewport and show your forest */
+    
     html, body {
       margin: 0;
       padding: 0;
       height: 100vh;
-      /* your new background: */
+      
       background: url('images/forest.png') no-repeat center center;
       background-size: cover;
-      /* fallback color in case the image doesn’t load */
+      
       background-color: black;
       font-family: sans-serif;
     }
 
-    /* 2) Center your hero content on top of it */
     section {
       height: 100%;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      /* ensure text is legible over the dark forest */
+      
       color: #fff;
       text-shadow: 0 2px 4px rgba(0,0,0,0.7);
       backdrop-filter: brightness(0.8);
     }
-
-    /* 3) Button styling */
+    
     button {
       padding: 1em 2em;
       font-size: 1.2em;
