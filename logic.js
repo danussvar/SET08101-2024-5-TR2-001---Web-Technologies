@@ -8,12 +8,12 @@ const soundOff = document.getElementById("sound-off");
 const music = document.getElementById("bg-music");
 
 let lives = 3;
-if(localStorage.getItem("lives") !=null){
-	lives = parseInt(localStorage.getItem("lives"));
+if(sessionStorage.getItem("lives") !=null){
+	lives = parseInt(sessionStorage.getItem("lives"));
 }
 else{
 	lives = 3;
-	localStorage.setItem("lives",3);
+	sessionStorage.setItem("lives",3);
 	
 	
 }
@@ -40,13 +40,13 @@ function changeColour(event){
 	
 	if(lives > 0){
 		lives--;
-		localStorage.setItem("lives",lives);
+		sessionStorage.setItem("lives",lives);
 		visualHeart();
 	
 	  if(lives === 0){
 	setTimeout(function(){ 
 	alert("You lost all your lives, time to restart");
-      localStorage.setItem("lives", 3);
+      sessionStorage.setItem("lives", 3);
       window.location.href = "stage1.html";
 	},100)
 		
@@ -66,6 +66,7 @@ function toggleMusic(){
 	if(music.muted === true){
 		music.muted = false;
 		music.play();
+
 		soundOn.style.display = "inline";
 		soundOff.style.display = "none";
 		
