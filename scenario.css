@@ -1,0 +1,32 @@
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #eef5f9;
+  font-family: sans-serif;
+}
+#game {
+  background: #fff;
+  padding: 2rem;
+  border: 2px solid #444;
+  border-radius: 8px;
+  max-width: 600px;
+  width: 90%;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+  text-align: center;
+}
+#riddle {
+  margin-bottom: 1.5rem;
+}
+#choices button {
+  margin: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
+#lives {
+  margin-top: 1rem;
+  font-weight: bold;
+}

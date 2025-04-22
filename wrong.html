@@ -2,21 +2,15 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Wrong Answer</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Wrong Answer!</title>
+  <link rel="stylesheet" href="consequence.css">
 </head>
 <body>
-  <div class="message-container">
+  <div id="container">
     <h1>Wrong Answer!</h1>
-    <p>You were eaten by a bear... You lost a life.</p>
-    <button onclick="goToYouDied()">Continue</button>
+    <p>You’ve lost a life. <span id="livesLeft"></span> remaining.</p>
+    <button id="retry">Try Again</button>
   </div>
-
-  <script>
-    function goToYouDied() {
-      // Optionally decrease life count in localStorage/sessionStorage
-      window.location.href = 'you_died.html';
-    }
-  </script>
+  <script src="wrong.js"></script>
 </body>
 </html>

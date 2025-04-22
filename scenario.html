@@ -2,18 +2,18 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Scenario</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Forest Quest – Scenario</title>
+  <link rel="stylesheet" href="scenario.css">
 </head>
 <body>
-  <div class="scenario-container">
-    <h2 id="riddle">What has keys but can't open locks?</h2>
-    <div class="options">
-      <button onclick="handleAnswer('wrong')">A Map</button>
-      <button onclick="handleAnswer('correct')">A Piano</button>
+  <div id="game">
+    <h1 id="riddle">Loading…</h1>
+    <div id="choices">
+      <button id="choice1"></button>
+      <button id="choice2"></button>
     </div>
+    <div id="lives"></div>
   </div>
-
-  <script src="script.js"></script>
+  <script src="scenario.js"></script>
 </body>
 </html>
