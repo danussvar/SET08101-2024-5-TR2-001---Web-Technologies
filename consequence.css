@@ -6,6 +6,7 @@ body {
   align-items: center;
   background: #fde6e6;
   font-family: sans-serif;
+  background-attachment: fixed;
 }
 #container {
   background: #fff;

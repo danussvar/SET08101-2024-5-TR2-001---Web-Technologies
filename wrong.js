@@ -7,6 +7,7 @@ window.onload = () => {
     document.body.style.backgroundImage    = `url('images/death${prev}.png')`;
     document.body.style.backgroundSize     = 'cover';
     document.body.style.backgroundPosition = 'center';
+    document.body.style.backgroundAttachment = 'fixed';
   
     // Show the custom reason
     document.getElementById('reason').textContent = reason;

@@ -9,6 +9,7 @@ body {
   /* fallback color while JS is loading */
   background: #eef5f9;
   font-family: sans-serif;
+  background-attachment: fixed;
 }
 #game {
   background: #fff;
