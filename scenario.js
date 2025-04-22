@@ -82,7 +82,7 @@ window.onload = () => {
 
   // Background image for this scenario:
   document.body.style.backgroundImage    = `url('images/scenario${idx}.png')`;
-  document.body.style.backgroundSize     = 'cover';
+  document.body.style.backgroundSize     = 'auto 100%';
   document.body.style.backgroundPosition = 'center';
   document.body.style.backgroundAttachment = 'fixed';
 

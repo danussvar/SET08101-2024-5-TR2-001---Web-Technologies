@@ -5,7 +5,7 @@ window.onload = () => {
 
     // Death background for this wrong answer:
     document.body.style.backgroundImage    = `url('images/death${prev}.png')`;
-    document.body.style.backgroundSize     = 'cover';
+    document.body.style.backgroundSize     = 'auto 100%';
     document.body.style.backgroundPosition = 'center';
     document.body.style.backgroundAttachment = 'fixed';
   
