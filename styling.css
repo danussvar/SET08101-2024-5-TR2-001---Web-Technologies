@@ -1,0 +1,22 @@
+body {
+    background-image: url(backgroundImage.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+#life-counter {
+    color: red;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+#audio-icons {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+
