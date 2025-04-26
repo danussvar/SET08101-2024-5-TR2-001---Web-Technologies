@@ -1,10 +1,4 @@
 window.onload = () => {
-
-    //Alens code
-    initialiseLives();    
-    setupMusicToggle(); 
-    //Alens code
-
     const params = new URLSearchParams(location.search);
     const prev   = parseInt(params.get('prev') || '1', 10);
     const reason = params.get('reason') || "You met an untimely end.";
