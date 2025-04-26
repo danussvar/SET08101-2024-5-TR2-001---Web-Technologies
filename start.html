@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Adventure Game – Start</title>
+  <style>
+    
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      
+      background: url('images/forest.png') no-repeat center center;
+      background-size: cover;
+      
+      background-color: black;
+      font-family: sans-serif;
+    }
+
+    section {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      
+      color: #fff;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.7);
+      backdrop-filter: brightness(0.8);
+    }
+    
+    button {
+      padding: 1em 2em;
+      font-size: 1.2em;
+      cursor: pointer;
+      border: none;
+      border-radius: 4px;
+      background: rgba(0, 51, 153, 0.8);
+      color: white;
+      transition: background 0.2s ease;
+    }
+    button:hover {
+      background: rgba(0, 34, 102, 0.9);
+    }
+  </style>
+</head>
+<body>
+  <section>
+    <h1>You have woken up in a forest</h1>
+    <p>Do you want to escape the forest?</p>
+    <button id="startBtn">See the message from the beyond →</button>
+  </section>
+
+  <script>
+    document.getElementById('startBtn').addEventListener('click', () => {
+      window.location.href = 'scroll.html';
+    });
+  </script>
+</body>
+</html>
