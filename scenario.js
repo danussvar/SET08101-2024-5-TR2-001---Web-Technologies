@@ -76,6 +76,12 @@ const scenarios = [
 ];
 
 window.onload = () => {
+
+  //Alens code
+  initialiseLives();    
+  setupMusicToggle(); 
+  //Alens code
+
   let lives = parseInt(sessionStorage.getItem('lives') || '3', 10);
   let params = new URLSearchParams(location.search);
   let idx = parseInt(params.get('s') || '1', 10);

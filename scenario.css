@@ -3,7 +3,7 @@ html, body {
   margin: 0;
   font-family: sans-serif;
   background-attachment: fixed;
-  color: white; /* ⬅ Make all text white by default */
+  color: white; /*  Make all text white by default */
 }
 
 body {
