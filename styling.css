@@ -1,5 +1,4 @@
 body {
-    background-image: url(backgroundImage.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
@@ -8,15 +7,16 @@ body {
 
 #life-counter {
     color: red;
-    position: absolute;
-    top: 20px;
-    left: 20px;
+    position: fixed;
+    top: 10px;
+    left: 10px;
 }
 
 #audio-icons {
-    position: absolute;
-    top: 20px;
-    right: 20px;
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 999;
 }
 
 
