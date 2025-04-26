@@ -98,7 +98,7 @@ window.onload = () => {
   }
   // If past the last scenario, you’ve won
   if (idx > scenarios.length) {
-    return location.href = 'treasure.html';
+    return location.href = 'end.html';
   }
 
   // Display remaining lives
