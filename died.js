@@ -12,12 +12,12 @@ window.onload = () => {
     if (lives > 0) {
       msg.textContent  = `You have ${lives} lives left—press Continue to try again.`;
       btn.textContent  = 'Continue';
-      btn.onclick      = () => location.href = `scenario.html?s=${prev}`; //back to start
+      btn.onclick      = () => location.href = `scenario.html?s=${prev}`;
     } else {
       msg.textContent  = `You have no lives left—game over!`;
       btn.textContent  = 'Restart Game'; 
       btn.onclick      = () => {
-        sessionStorage.setItem('lives', 3); //keeps lives through game
+        sessionStorage.setItem('lives', 3); 
         location.href = 'scenario.html?s=1';
       };
     }
