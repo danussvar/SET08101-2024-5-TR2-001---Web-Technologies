@@ -15,7 +15,12 @@ window.onload = () => {
   // Decrement lives
   let lives = Math.max(0, parseInt(sessionStorage.getItem('lives') || '3', 10) - 1);
   sessionStorage.setItem('lives', lives);
-  document.getElementById('livesLeft').textContent = lives;
+
+  const livesLeftEl = document.getElementById('livesLeft');
+  if (livesLeftEl) 
+    {
+      livesLeftEl.textContent = lives;
+    }
 
   document.getElementById('retry').onclick = () => {
     if (lives > 0) {
