@@ -102,7 +102,7 @@ window.onload = () => {
   }
 
   // Display remaining lives
-  document.getElementById('lives').textContent = `Lives: ${lives}`;
+ // document.getElementById('lives').textContent = `Lives: ${lives}`;
 
   // Load current scenario
   const { question, choices, correct, deathReasons } = scenarios[idx - 1];
