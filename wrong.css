@@ -10,7 +10,7 @@ html, body {
   align-items: center;
 }
 
-/* Dark overlay to help text readability */
+
 .overlay {
   position: absolute;
   inset: 0;
@@ -18,13 +18,13 @@ html, body {
   z-index: 0;
 }
 
-/* Content container */
+
 #container {
   position: relative;
   z-index: 1;
   padding: 2rem;
   text-align: center;
-  background-color: transparent !important; /* Force no white box */
+  background-color: transparent !important; 
   border: none;
   box-shadow: none;
   max-width: 500px;
