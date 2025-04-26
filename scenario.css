@@ -12,9 +12,9 @@ body {
   background-attachment: fixed;
 }
 #game {
-  background: #fff;
+  background: none;
   padding: 2rem;
-  border: 2px solid #444;
+  border: none;
   border-radius: 8px;
   max-width: 600px;
   width: 90%;
